@@ -1,0 +1,40 @@
+﻿<Window x:Class="OpenTitler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="HyperTitle" MinWidth="320" MaxWidth="1680" MinHeight="200" MaxHeight="1050" Height="480" Width="754">
+    <Grid Background="#FF1E1E1E">
+        <!-- Add Text, Image, and Export buttons -->
+        <Button x:Name="addImageButton" Content="Add Image" HorizontalAlignment="Left" Margin="281,161,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="addTextButton" Content="Add Text" HorizontalAlignment="Left" Margin="281,136,0,0" VerticalAlignment="Top" Width="75" Click="addTextButton_Click"/>
+        <Button x:Name="saveImageButton" Content="Export" HorizontalAlignment="Left" Margin="655,419,0,0" VerticalAlignment="Top" Width="75" Click="saveImageButton_Click"/>
+        
+        <!-- Primary Canvas for Rendering Preview -->
+        <Canvas Name="primaryCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="720" Margin="10,10,0,0" AllowDrop="True" >
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/transparentbg.png" ViewportUnits="Absolute" TileMode="Tile" Stretch="None" AlignmentX="Left" AlignmentY="Top" Viewport="0,0,128,128" />
+            </Canvas.Background>            
+        </Canvas>
+        <TextBlock HorizontalAlignment="Left" Margin="689,115,0,0" TextWrapping="Wrap" Text="Preview" VerticalAlignment="Top" Foreground="White">
+            <TextBlock.Background>
+                <ImageBrush/>
+            </TextBlock.Background>
+        </TextBlock>
+
+        <!-- Layers ListBox-->
+        <ListBox Name="layerListBox" HorizontalAlignment="Left" Height="282" Margin="10,136,0,0" VerticalAlignment="Top" Width="266" Background="#FF191919" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,423,0,0" TextWrapping="Wrap" Text="Layers" VerticalAlignment="Top" Foreground="White"/>
+        <Button x:Name="moveupButton" Content="Move Up" HorizontalAlignment="Left" Margin="281,373,0,0" VerticalAlignment="Top" Width="75" Click="moveupButton_Click"/>
+        <Button x:Name="movedownButton" Content="Move Down" HorizontalAlignment="Left" Margin="281,398,0,0" VerticalAlignment="Top" Width="75" Click="movedownButton_Click"/>
+        
+        <!-- Color Picker and Fonts -->
+        <xctk:ColorPicker Name="fontColorPicker" ShowAdvancedButton="True" Margin="361,136,332,283" SelectedColorChanged="fontColorPicker_SelectedColorChanged"/>
+        <Button x:Name="fontsButton" Content="Fonts..." HorizontalAlignment="Left" Margin="419,136,0,0" VerticalAlignment="Top" Width="53" Click="fontsButton_Click"/>  
+        
+        <!-- Sliders for positioning -->
+        <Slider x:Name="xPosSlider" HorizontalAlignment="Left" Margin="332,246,0,0" VerticalAlignment="Top" Width="140" Maximum="720" ValueChanged="xSlider_ValueChanged"/>
+        <Slider x:Name="yPosSlider" HorizontalAlignment="Left" Margin="332,269,0,0" VerticalAlignment="Top" Width="140" Maximum="100" ValueChanged="ySlider_ValueChanged"/>
+        <TextBlock x:Name="xAxisText" HorizontalAlignment="Left" Margin="314,247,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock x:Name="yAxisText" HorizontalAlignment="Left" Margin="314,270,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" Foreground="White"/>
+    </Grid>
+</Window>
