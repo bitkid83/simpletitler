@@ -2,10 +2,10 @@ Simple Titler
 By Paul Hindt, 4/22/2015
 
 Developed in Visual Studio 2013. Will compile in 2012 though.
-Requires Extended WPF Toolkit to build - http://wpftoolkit.codeplex.com/
-nuget> Install-Package Extended.Wpf.Toolkit
 
--
+Requires Extended WPF Toolkit to build, http://wpftoolkit.codeplex.com
+
+nuget> Install-Package Extended.Wpf.Toolkit
 
 This project was designed with Telestream Wirecast usage in mind.
 However it is a generic application with no direct ties to Wirecast.
